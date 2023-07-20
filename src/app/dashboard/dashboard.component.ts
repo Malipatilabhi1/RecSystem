@@ -59,17 +59,16 @@ export type ChartOptionsRevenueByCountry = {
   colors:any;
 };
 export type ChartOptionsMonthlyRevenueTrend = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  yaxis: ApexYAxis;
-  xaxis: ApexXAxis;
-  fill: ApexFill;
-  tooltip: ApexTooltip;
-  stroke: ApexStroke;
-  legend: ApexLegend;
-  colors:any;
+ 
+    series: ApexAxisChartSeries;
+    chart: ApexChart;
+    xaxis: ApexXAxis;
+    yaxis: ApexYAxis;
+    dataLabels: ApexDataLabels;
+    grid: ApexGrid;
+    stroke: ApexStroke;
+    title: ApexTitleSubtitle;
+  
 };
 export type ChartOptionsProduct1 = {
   series: ApexAxisChartSeries;
@@ -230,7 +229,7 @@ export class DashboardComponent implements OnInit {
        "Saudi Arabia":0.0
     },
     "Monthly Revenue Trend":{
-       "index":[
+       "index1":[
           0,
           1,
           2,
@@ -562,80 +561,55 @@ export class DashboardComponent implements OnInit {
       };
     
   }
-  revenueByTrend(){
-    for (const monthlyRevenue in this.data['Monthly Revenue Trend']) {
-      if (this.data['Monthly Revenue Trend'].hasOwnProperty(monthlyRevenue)) {
-        this.keysMonthlyRevenue.push(monthlyRevenue);
-        this.valuesMonthlyRevenue.push(this.data['Monthly Revenue Trend'][monthlyRevenue]);
-      }
-    }
-      this.chartOptionsMonthlyRevenueTrend = {
-        series: [
-          {
-            name: "Average Spend",
-            data: [12, 16, 18, 20]
-          }
-        ],
-        chart: {
-          type: "bar",
-          height: 200
-        },
-        colors:["#9692F1"],
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: "35%"
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ["transparent"]
-        },
-        xaxis: {
-          categories: [
-            "<10k",
-            "10k-30k",
-            "30k-50k",
-            "50k+"
-          ],
-          title:{
-            text: "Country",
-            style: {
-              color: '#666',
-             fontSize:'14px',
-             fontFamily:'Outfit',
-             fontWeight:400
-            }
-          }
-        },
-        yaxis: {
-          title: {
-            text: "Total Quantity",
-            style: {
-              color: '#666',
-             fontSize:'14px',
-             fontFamily:'Outfit',
-             fontWeight:400
-            }
-          }
-        },
-       
-        fill: {
-          opacity: 1
-        },
-        tooltip: {
-          y: {
-            formatter: function(val) {
-              return "$ " + val + " thousands";
-            }
-          }
+
+  revenueByTrend() {
+    const data = this.data['Monthly Revenue Trend']['data'];
+
+    this.keysMonthlyRevenue = data.map((item) => item[0].toString()); // X-axis labels
+    this.valuesMonthlyRevenue = data.map((item) => Number(item[1])); // Data points
+
+    this.chartOptionsMonthlyRevenueTrend = {
+      series: [
+        {
+          name: "Total Sales",
+          data: this.valuesMonthlyRevenue
         }
-      };
-    
+      ],
+      chart: {
+        height: 150,
+        type: "line",
+        zoom: {
+          enabled: false
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: "straight"
+      },
+      grid: {
+        row: {
+          colors: ["#f3f3f3", "transparent"],
+          opacity: 0.5
+        }
+      },
+      yaxis: {
+        title: {
+          text: "Total Sales",
+          style: {
+            color: '#666',
+            fontSize: '14px',
+            fontFamily: 'Outfit',
+            fontWeight: 400
+          }
+        },
+        
+    },
+      xaxis: {
+        categories: this.keysMonthlyRevenue
+      }
+    };
   }
   typeArray: string[] = [];
   revenueArray: number[] = [];
