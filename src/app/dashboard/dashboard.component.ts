@@ -71,6 +71,34 @@ export type ChartOptionsMonthlyRevenueTrend = {
   legend: ApexLegend;
   colors:any;
 };
+export type ChartOptionsProduct1 = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  dataLabels: ApexDataLabels;
+  plotOptions: ApexPlotOptions;
+  yaxis: ApexYAxis;
+  xaxis: ApexXAxis;
+  fill: ApexFill;
+  tooltip: ApexTooltip;
+  stroke: ApexStroke;
+  legend: ApexLegend;
+  colors:any;
+};
+export type ChartOptionsProduct2 = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  dataLabels: ApexDataLabels;
+  plotOptions: ApexPlotOptions;
+  yaxis: ApexYAxis;
+  xaxis: ApexXAxis;
+  fill: ApexFill;
+  tooltip: ApexTooltip;
+  stroke: ApexStroke;
+  legend: ApexLegend;
+  colors:any;
+};
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -91,6 +119,12 @@ export class DashboardComponent implements OnInit {
   @ViewChild("chart5") chart5: ChartComponent;
   public chartOptionsMonthlyRevenueTrend: Partial<ChartOptionsMonthlyRevenueTrend>;
 
+  @ViewChild("chart6") chart6: ChartComponent;
+  public chartOptionsProduct1: Partial<ChartOptionsProduct1>;
+
+  @ViewChild("chart7") chart7: ChartComponent;
+  public chartOptionsProduct2: Partial<ChartOptionsProduct2>;
+
 
   constructor() { }
 
@@ -99,11 +133,13 @@ export class DashboardComponent implements OnInit {
     this.RFM()
     this.revenueByCountry()
     this.revenueByTrend()
+    this.product1()
+    this.product2()
   }
   data={
-    "No of Customer":4372,
-    "No. of items":4223,
-    "Total Revenue":"€9.75 M",
+    "NoOfCustomer":4372,
+    "NoOfItems":4223,
+    "TotalRevenue":"€9.75 M",
     "Sales by Countries":{
     "United Kingdom":4263829,
     "Netherlands":200128,
@@ -456,8 +492,8 @@ export class DashboardComponent implements OnInit {
         }
       };
     
-    }
-    revenueByTrend(){
+  }
+  revenueByTrend(){
       this.chartOptionsMonthlyRevenueTrend = {
         series: [
           {
@@ -503,7 +539,7 @@ export class DashboardComponent implements OnInit {
         },
         yaxis: {
           title: {
-            text: "Sales Quantity",
+            text: "Total Quantity",
             style: {
               color: '#666',
              fontSize:'14px',
@@ -525,6 +561,153 @@ export class DashboardComponent implements OnInit {
         }
       };
     
+  }
+
+  product1(){
+      for (const Revenue in this.data['Revenue by Country']) {
+        if (this.data['Revenue by Country'].hasOwnProperty(Revenue)) {
+          this.keysRevenue.push(Revenue);
+          this.valuesRevenue.push(this.data['Revenue by Country'][Revenue]);
+        }
+      }
+        this.chartOptionsProduct1 = {
+          series: [
+            {
+              name: "Average Spend",
+              data: this.valuesRevenue
+            }
+          ],
+          chart: {
+            type: "bar",
+            height: 200
+          },
+          colors:["#9692F1"],
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: "35%"
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ["transparent"]
+          },
+          xaxis: {
+            categories: 
+              this.keysRevenue
+            ,
+            labels:{
+            style: {
+             fontSize:'10px',
+             fontFamily:'Outfit',
+             fontWeight:400}},
+            title:{
+              text: "Product Names",
+              style: {
+                color: '#666',
+               fontSize:'10px',
+               fontFamily:'Outfit',
+               fontWeight:400
+              }
+            }
+          },
+          yaxis: {
+            title: {
+              text: "Sales Quantity",
+              style: {
+                color: '#666',
+               fontSize:'14px',
+               fontFamily:'Outfit',
+               fontWeight:400
+              }
+            }
+          },
+         
+          fill: {
+            opacity: 1
+          },
+          tooltip: {
+            y: {
+              formatter: function(val) {
+                return "$ " + val + " thousands";
+              }
+            }
+          }
+        };
+      
+ }
+    product2(){
+        this.chartOptionsProduct2 = {
+          series: [
+            {
+              name: "Average Spend",
+              data: [12, 16, 18, 20]
+            }
+          ],
+          chart: {
+            type: "bar",
+            height: 200
+          },
+          colors:["#9692F1"],
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: "35%"
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ["transparent"]
+          },
+          xaxis: {
+            categories: [
+              "<10k",
+              "10k-30k",
+              "30k-50k",
+              "50k+"
+            ],
+            title:{
+              text: "Product Name",
+              style: {
+                color: '#666',
+               fontSize:'14px',
+               fontFamily:'Outfit',
+               fontWeight:400
+              }
+            }
+          },
+          yaxis: {
+            title: {
+              text: "Total Sales",
+              style: {
+                color: '#666',
+               fontSize:'14px',
+               fontFamily:'Outfit',
+               fontWeight:400
+              }
+            }
+          },
+         
+          fill: {
+            opacity: 1
+          },
+          tooltip: {
+            y: {
+              formatter: function(val) {
+                return "$ " + val + " thousands";
+              }
+            }
+          }
+        };
+      
     }
   }
 

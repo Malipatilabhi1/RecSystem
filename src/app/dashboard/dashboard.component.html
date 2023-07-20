@@ -42,7 +42,7 @@
                </svg>
            </div>
            <div class="d-flex flex-column px-3" >
-             <h1 class="py-0 my-0" style="display: flex;align-items: left;justify-content: left;text-align: left;width: 100%;">4500</h1>
+             <h1 class="py-0 my-0" style="display: flex;align-items: left;justify-content: left;text-align: left;width: 100%;">{{data.NoOfCustomer}}</h1>
               <p>No. of Customers</p>
            </div>
      
@@ -94,7 +94,7 @@
                  </svg>
            </div>
            <div class="d-flex flex-column px-3">
-             <h1 class="py-0 my-0">2500</h1>
+             <h1 class="py-0 my-0">{{data.NoOfItems}}</h1>
               <p>No. of Items</p>
            </div>
      
@@ -148,7 +148,7 @@
                 </svg>
           </div>
           <div class="d-flex flex-column px-3">
-            <h1 class="py-0 my-0">$5M</h1>
+            <h1 class="py-0 my-0">{{data.TotalRevenue}}</h1>
              <p>Total Revenue</p>
           </div>
     
@@ -245,19 +245,19 @@
   <div class="row3 d-flex flex-row" style="width:100%;margin-bottom: 8em;">
     <div class="card m-2" style="width:50%">
       <h4 class=" px-2 py-0 my-0">Revenue by Country</h4>
-      <div id="chart4">
+      <div id="chart6">
         <apx-chart
-          [series]="chartOptionsRevenueByCountry.series"
-          [chart]="chartOptionsRevenueByCountry.chart"
-          [dataLabels]="chartOptionsRevenueByCountry.dataLabels"
-          [plotOptions]="chartOptionsRevenueByCountry.plotOptions"
-          [yaxis]="chartOptionsRevenueByCountry.yaxis"
-          [legend]="chartOptionsRevenueByCountry.legend"
-          [fill]="chartOptionsRevenueByCountry.fill"
-          [stroke]="chartOptionsRevenueByCountry.stroke"
-          [tooltip]="chartOptionsRevenueByCountry.tooltip"
-          [xaxis]="chartOptionsRevenueByCountry.xaxis"
-          [colors]="chartOptionsRevenueByCountry.colors"
+          [series]="chartOptionsProduct1.series"
+          [chart]="chartOptionsProduct1.chart"
+          [dataLabels]="chartOptionsProduct1.dataLabels"
+          [plotOptions]="chartOptionsProduct1.plotOptions"
+          [yaxis]="chartOptionsProduct1.yaxis"
+          [legend]="chartOptionsProduct1.legend"
+          [fill]="chartOptionsProduct1.fill"
+          [stroke]="chartOptionsProduct1.stroke"
+          [tooltip]="chartOptionsProduct1.tooltip"
+          [xaxis]="chartOptionsProduct1.xaxis"
+          [colors]="chartOptionsProduct1.colors"
         ></apx-chart>
       </div>
      
@@ -265,19 +265,19 @@
     </div>
     <div class="card m-2" style="width:50%">
       <h4 class="px-2">Monthly Revenue Trends</h4>
-      <div id="chart5">
+      <div id="chart7">
         <apx-chart
-        [series]="chartOptionsMonthlyRevenueTrend.series"
-        [chart]="chartOptionsMonthlyRevenueTrend.chart"
-        [dataLabels]="chartOptionsMonthlyRevenueTrend.dataLabels"
-        [plotOptions]="chartOptionsMonthlyRevenueTrend.plotOptions"
-        [yaxis]="chartOptionsMonthlyRevenueTrend.yaxis"
-        [legend]="chartOptionsMonthlyRevenueTrend.legend"
-        [fill]="chartOptionsMonthlyRevenueTrend.fill"
-        [stroke]="chartOptionsMonthlyRevenueTrend.stroke"
-        [tooltip]="chartOptionsMonthlyRevenueTrend.tooltip"
-        [xaxis]="chartOptionsMonthlyRevenueTrend.xaxis"
-        [colors]="chartOptionsMonthlyRevenueTrend.colors"
+        [series]="chartOptionsProduct2.series"
+        [chart]="chartOptionsProduct2.chart"
+        [dataLabels]="chartOptionsProduct2.dataLabels"
+        [plotOptions]="chartOptionsProduct2.plotOptions"
+        [yaxis]="chartOptionsProduct2.yaxis"
+        [legend]="chartOptionsProduct2.legend"
+        [fill]="chartOptionsProduct2.fill"
+        [stroke]="chartOptionsProduct2.stroke"
+        [tooltip]="chartOptionsProduct2.tooltip"
+        [xaxis]="chartOptionsProduct2.xaxis"
+        [colors]="chartOptionsProduct2.colors"
         ></apx-chart>
       </div>
     </div>
