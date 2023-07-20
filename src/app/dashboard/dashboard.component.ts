@@ -141,32 +141,31 @@ export class DashboardComponent implements OnInit {
     "NoOfItems":4223,
     "TotalRevenue":"€9.75 M",
     "Sales by Countries":{
-    "United Kingdom":4263829,
-    "Netherlands":200128,
-    "EIRE":142637,
-    "Germany":117448,
-    "France":110480,
-    "Australia":83653,
-    "Sweden":35637,
-    "Switzerland":30325,
-    "Spain":26824,
-    "Japan":25218,
-    "Belgium":23152,
-    "Norway":19247,
-   "Portugal":16180,
-   "Finland":10666,
-   "Channel Islands":9479,
-   "Denmark":8188,
-   "Italy":7999,
-  "Cyprus":6317,
-   "Singapore":5234,
-   "Austria":4827,
-   "Hong Kong":4769,
-   "Israel":4353,
-   "Poland":3653,
-   "Unspecified":3300,
-   "Canada":2763,
-    "Iceland":2458,
+       "Netherlands":200128,
+       "EIRE":142637,
+       "Germany":117448,
+       "France":110480,
+       "Australia":83653,
+       "Sweden":35637,
+       "Switzerland":30325,
+       "Spain":26824,
+       "Japan":25218,
+       "Belgium":23152,
+       "Norway":19247,
+       "Portugal":16180,
+       "Finland":10666,
+       "Channel Islands":9479,
+       "Denmark":8188,
+       "Italy":7999,
+       "Cyprus":6317,
+       "Singapore":5234,
+       "Austria":4827,
+       "Hong Kong":4769,
+       "Israel":4353,
+       "Poland":3653,
+       "Unspecified":3300,
+       "Canada":2763,
+       "Iceland":2458,
        "Greece":1556,
        "USA":1034,
        "United Arab Emirates":982,
@@ -180,102 +179,168 @@ export class DashboardComponent implements OnInit {
        "Bahrain":260,
        "Saudi Arabia":75
     },
- 
-    "RFM":{
- 
-       "Active Customers":294,
- 
-       "At Risk":720,
- 
-       "Emerging Customers":575,
- 
-       "Inactive Customers":67,
- 
-       "Lost":722,
- 
-       "Potentially lost":428,
- 
-       "Top Customers":695,
- 
-       "Unsteady Customers":449
- 
+    "RFM Analysis":{
+       "Active Customers":7.4,
+       "At Risk":18.2,
+       "Emerging Customers":14.6,
+       "Inactive Customers":1.7,
+       "Lost":18.3,
+       "Potentially lost":10.8,
+       "Top Customers":17.6,
+       "Unsteady Customers":11.4
     },
- 
     "Revenue by Country":{
- 
-       "United Kingdom":8187806.364001113,
- 
-       "Netherlands":284661.54000000015,
- 
-       "EIRE":263276.81999999826,
- 
-       "Germany":221698.20999999862,
- 
-       "France":197403.90000000002,
- 
-       "Australia":137077.26999999973,
- 
-       "Switzerland":56385.35000000009,
- 
-       "Spain":54774.57999999997,
- 
-       "Belgium":40910.95999999998,
- 
-       "Sweden":36595.91,
- 
-       "Japan":35340.62,
- 
-       "Norway":35163.46000000004,
- 
-       "Portugal":29367.019999999993,
- 
-       "Finland":22326.73999999997,
- 
-       "Channel Islands":20086.289999999957,
- 
-       "Denmark":18768.140000000003,
- 
-       "Italy":16890.510000000002,
- 
-       "Cyprus":12946.289999999999,
- 
-       "Austria":10154.319999999996,
- 
-       "Hong Kong":10117.040000000003,
- 
-       "Singapore":9120.39,
- 
-       "Israel":7907.819999999995,
- 
-       "Poland":7213.139999999997,
- 
-       "Unspecified":4749.789999999996,
- 
-       "Greece":4710.5199999999995,
- 
-       "Iceland":4309.999999999997,
- 
-       "Canada":3666.380000000001,
- 
-       "Malta":2505.4700000000003,
- 
-       "United Arab Emirates":1902.2800000000007,
- 
-       "USA":1730.9200000000005,
- 
-       "Lebanon":1693.8800000000003,
- 
-       "Lithuania":1661.06,
- 
-       "European Community":1291.75,
- 
-       "Brazil":1143.6000000000001,
- 
-       "RSA":1002.3099999999998,
- 
-       "Czech Republic":707.72,
-       "Bahrain":548.4,
-       "Saudi Arabia":131.17
+       "United Kingdom":8.19,
+       "Netherlands":0.28,
+       "EIRE":0.26,
+       "Germany":0.22,
+       "France":0.2,
+       "Australia":0.14,
+       "Switzerland":0.06,
+       "Spain":0.05,
+       "Belgium":0.04,
+       "Sweden":0.04,
+       "Japan":0.04,
+       "Norway":0.04,
+       "Portugal":0.03,
+       "Finland":0.02,
+       "Channel Islands":0.02,
+       "Denmark":0.02,
+       "Italy":0.02,
+       "Cyprus":0.01,
+       "Austria":0.01,
+       "Hong Kong":0.01,
+       "Singapore":0.01,
+       "Israel":0.01,
+       "Poland":0.01,
+       "Unspecified":0.0,
+       "Greece":0.0,
+       "Iceland":0.0,
+       "Canada":0.0,
+       "Malta":0.0,
+       "United Arab Emirates":0.0,
+       "USA":0.0,
+       "Lebanon":0.0,
+       "Lithuania":0.0,
+       "European Community":0.0,
+       "Brazil":0.0,
+       "RSA":0.0,
+       "Czech Republic":0.0,
+       "Bahrain":0.0,
+       "Saudi Arabia":0.0
+    },
+    "Monthly Revenue Trend":{
+       "index":[
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+       ],
+       "columns":[
+          "MonthYear",
+          "TotalSales"
+       ],
+       "data":[
+          [
+             "2010-12",
+             748957.0199999774
+          ],
+          [
+             "2011-01",
+             560000.2600000234
+          ],
+          [
+             "2011-02",
+             498062.6500000268
+          ],
+          [
+             "2011-03",
+             683267.0800000189
+          ],
+          [
+             "2011-04",
+             493207.1210000249
+          ],
+          [
+             "2011-05",
+             723333.51000001
+          ],
+          [
+             "2011-06",
+             691123.1200000228
+          ],
+          [
+             "2011-07",
+             681300.1110000301
+          ],
+          [
+             "2011-08",
+             682680.5100000176
+          ],
+          [
+             "2011-09",
+             1019687.622000011
+          ],
+          [
+             "2011-10",
+             1070704.669999975
+          ],
+          [
+             "2011-11",
+             1461756.2499997574
+          ],
+          [
+             "2011-12",
+             433668.0100000171
+          ]
+       ]
+    },
+    "Total Revenue of Type":{
+       "Type":{
+          "0":"T-LIGHT HOLDER",
+          "1":"METAL SIGN",
+          "2":"RED RETROSPOT",
+          "3":"3 TIER",
+          "4":"WATER BOTTLE",
+          "5":"CAKE CASES",
+          "6":"WHITE FINISH",
+          "7":"PARTY BUNTING",
+          "8":"50'S CHRISTMAS",
+          "9":"NIGHT LIGHT"
+       },
+       "Revenue":{
+          "0":213835.37000000008,
+          "1":178001.68000000145,
+          "2":161061.26000000106,
+          "3":143840.8199999991,
+          "4":129329.51999999913,
+          "5":80566.17999999857,
+          "6":78321.47999999976,
+          "7":74439.83000000037,
+          "8":74187.07999999993,
+          "9":72412.31000000064
+       }
+    },
+    "Sales by Quantity (Top 10)":{
+       "WORLD WAR 2 GLIDERS ASSTD DESIGNS":53847,
+       "JUMBO BAG RED RETROSPOT":47363,
+       "ASSORTED COLOUR BIRD ORNAMENT":36381,
+       "POPCORN HOLDER":36334,
+       "PACK OF 72 RETROSPOT CAKE CASES":36039,
+       "WHITE HANGING HEART T-LIGHT HOLDER":35317,
+       "RABBIT NIGHT LIGHT":30680,
+       "MINI PAINT SET VINTAGE ":26437,
+       "PACK OF 12 LONDON TISSUES ":26315,
+       "PACK OF 60 PINK PAISLEY CAKE CASES":24753
     }
  }
   uploadButtonClicked() {
@@ -294,6 +359,10 @@ export class DashboardComponent implements OnInit {
   valuesRFM: number[] = [];
   keysRevenue: string[] = [];
   valuesRevenue: number[] = [];
+  keysMonthlyRevenue: string[] = [];
+  valuesMonthlyRevenue: number[] = [];
+  keysTopsales: string[] = [];
+  valuesTopsales: number[] = [];
 
   salesQuantity(){
     for (const country in this.data['Sales by Countries']) {
@@ -373,10 +442,10 @@ export class DashboardComponent implements OnInit {
   
   }
   RFM(){  
-    for (const RFM in this.data.RFM) {
-      if (this.data.RFM.hasOwnProperty(RFM)) {
+    for (const RFM in this.data['RFM Analysis']) {
+      if (this.data['RFM Analysis'].hasOwnProperty(RFM)) {
         this.keysRFM.push(RFM);
-        this.valuesRFM.push(this.data.RFM[RFM]);
+        this.valuesRFM.push(this.data['RFM Analysis'][RFM]);
       }
     }
     this.chartOptions = {
@@ -494,6 +563,12 @@ export class DashboardComponent implements OnInit {
     
   }
   revenueByTrend(){
+    for (const monthlyRevenue in this.data['Monthly Revenue Trend']) {
+      if (this.data['Monthly Revenue Trend'].hasOwnProperty(monthlyRevenue)) {
+        this.keysMonthlyRevenue.push(monthlyRevenue);
+        this.valuesMonthlyRevenue.push(this.data['Monthly Revenue Trend'][monthlyRevenue]);
+      }
+    }
       this.chartOptionsMonthlyRevenueTrend = {
         series: [
           {
@@ -562,19 +637,20 @@ export class DashboardComponent implements OnInit {
       };
     
   }
-
+  typeArray: string[] = [];
+  revenueArray: number[] = [];
   product1(){
-      for (const Revenue in this.data['Revenue by Country']) {
-        if (this.data['Revenue by Country'].hasOwnProperty(Revenue)) {
-          this.keysRevenue.push(Revenue);
-          this.valuesRevenue.push(this.data['Revenue by Country'][Revenue]);
-        }
+    for (const key in this.data['Total Revenue of Type'].Type) {
+      if (this.data['Total Revenue of Type'].Type.hasOwnProperty(key)) {
+        this.typeArray.push(this.data['Total Revenue of Type'].Type[key]);
+        this.revenueArray.push(this.data['Total Revenue of Type'].Revenue[key]);
       }
+    }
         this.chartOptionsProduct1 = {
           series: [
             {
               name: "Average Spend",
-              data: this.valuesRevenue
+              data: this.revenueArray
             }
           ],
           chart: {
@@ -598,11 +674,11 @@ export class DashboardComponent implements OnInit {
           },
           xaxis: {
             categories: 
-              this.keysRevenue
+              this.typeArray
             ,
             labels:{
             style: {
-             fontSize:'10px',
+             fontSize:'8px',
              fontFamily:'Outfit',
              fontWeight:400}},
             title:{
@@ -633,7 +709,7 @@ export class DashboardComponent implements OnInit {
           tooltip: {
             y: {
               formatter: function(val) {
-                return "$ " + val + " thousands";
+                return "$ " + val + "";
               }
             }
           }
@@ -641,11 +717,18 @@ export class DashboardComponent implements OnInit {
       
  }
     product2(){
+      for (const Topsales in this.data['Sales by Quantity (Top 10)']) {
+        if (this.data['Sales by Quantity (Top 10)'].hasOwnProperty(Topsales)) {
+          this.keysTopsales.push(Topsales);
+          this.valuesTopsales.push(this.data['Sales by Quantity (Top 10)'][Topsales]);
+        }
+      }
         this.chartOptionsProduct2 = {
+          
           series: [
             {
               name: "Average Spend",
-              data: [12, 16, 18, 20]
+              data: this.valuesTopsales
             }
           ],
           chart: {
@@ -668,17 +751,19 @@ export class DashboardComponent implements OnInit {
             colors: ["transparent"]
           },
           xaxis: {
-            categories: [
-              "<10k",
-              "10k-30k",
-              "30k-50k",
-              "50k+"
-            ],
+            categories: 
+              this.keysTopsales
+            ,
+            labels:{
+            style: {
+             fontSize:'8px',
+             fontFamily:'Outfit',
+             fontWeight:400}},
             title:{
               text: "Product Name",
               style: {
                 color: '#666',
-               fontSize:'14px',
+               fontSize:'10px',
                fontFamily:'Outfit',
                fontWeight:400
               }
