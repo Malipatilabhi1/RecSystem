@@ -150,33 +150,7 @@ export class DashboardComponent implements OnInit {
        "Spain":26824,
        "Japan":25218,
        "Belgium":23152,
-       "Norway":19247,
-       "Portugal":16180,
-       "Finland":10666,
-       "Channel Islands":9479,
-       "Denmark":8188,
-       "Italy":7999,
-       "Cyprus":6317,
-       "Singapore":5234,
-       "Austria":4827,
-       "Hong Kong":4769,
-       "Israel":4353,
-       "Poland":3653,
-       "Unspecified":3300,
-       "Canada":2763,
-       "Iceland":2458,
-       "Greece":1556,
-       "USA":1034,
-       "United Arab Emirates":982,
-       "Malta":944,
-       "Lithuania":652,
-       "Czech Republic":592,
-       "European Community":497,
-       "Lebanon":386,
-       "Brazil":356,
-       "RSA":352,
-       "Bahrain":260,
-       "Saudi Arabia":75
+       "Norway":19247
     },
     "RFM Analysis":{
        "Active Customers":7.4,
@@ -193,43 +167,17 @@ export class DashboardComponent implements OnInit {
        "Netherlands":0.28,
        "EIRE":0.26,
        "Germany":0.22,
-       "France":0.2,
+       "France":0.20,
        "Australia":0.14,
        "Switzerland":0.06,
        "Spain":0.05,
        "Belgium":0.04,
        "Sweden":0.04,
        "Japan":0.04,
-       "Norway":0.04,
-       "Portugal":0.03,
-       "Finland":0.02,
-       "Channel Islands":0.02,
-       "Denmark":0.02,
-       "Italy":0.02,
-       "Cyprus":0.01,
-       "Austria":0.01,
-       "Hong Kong":0.01,
-       "Singapore":0.01,
-       "Israel":0.01,
-       "Poland":0.01,
-       "Unspecified":0.0,
-       "Greece":0.0,
-       "Iceland":0.0,
-       "Canada":0.0,
-       "Malta":0.0,
-       "United Arab Emirates":0.0,
-       "USA":0.0,
-       "Lebanon":0.0,
-       "Lithuania":0.0,
-       "European Community":0.0,
-       "Brazil":0.0,
-       "RSA":0.0,
-       "Czech Republic":0.0,
-       "Bahrain":0.0,
-       "Saudi Arabia":0.0
+       "Norway":0.04
     },
     "Monthly Revenue Trend":{
-       "index1":[
+       "index":[
           0,
           1,
           2,
@@ -251,55 +199,55 @@ export class DashboardComponent implements OnInit {
        "data":[
           [
              "2010-12",
-             748957.0199999774
+             0.75
           ],
           [
              "2011-01",
-             560000.2600000234
+             0.56
           ],
           [
              "2011-02",
-             498062.6500000268
+             0.5
           ],
           [
              "2011-03",
-             683267.0800000189
+             0.68
           ],
           [
              "2011-04",
-             493207.1210000249
+             0.49
           ],
           [
              "2011-05",
-             723333.51000001
+             0.72
           ],
           [
              "2011-06",
-             691123.1200000228
+             0.69
           ],
           [
              "2011-07",
-             681300.1110000301
+             0.68
           ],
           [
              "2011-08",
-             682680.5100000176
+             0.68
           ],
           [
              "2011-09",
-             1019687.622000011
+             1.02
           ],
           [
              "2011-10",
-             1070704.669999975
+             1.07
           ],
           [
              "2011-11",
-             1461756.2499997574
+             1.46
           ],
           [
              "2011-12",
-             433668.0100000171
+             0.43
           ]
        ]
     },
@@ -317,18 +265,19 @@ export class DashboardComponent implements OnInit {
           "9":"NIGHT LIGHT"
        },
        "Revenue":{
-          "0":213835.37000000008,
-          "1":178001.68000000145,
-          "2":161061.26000000106,
-          "3":143840.8199999991,
-          "4":129329.51999999913,
-          "5":80566.17999999857,
-          "6":78321.47999999976,
-          "7":74439.83000000037,
-          "8":74187.07999999993,
-          "9":72412.31000000064
-       }
+        "0":0.21,
+        "1":0.18,
+        "2":0.16,
+        "3":0.14,
+        "4":0.13,
+        "5":0.08,
+        "6":0.08,
+        "7":0.07,
+        "8":0.07,
+        "9":0.07
+     },
     },
+   
     "Sales by Quantity (Top 10)":{
        "WORLD WAR 2 GLIDERS ASSTD DESIGNS":53847,
        "JUMBO BAG RED RETROSPOT":47363,
@@ -563,54 +512,55 @@ export class DashboardComponent implements OnInit {
   }
 
   revenueByTrend() {
-    const data = this.data['Monthly Revenue Trend']['data'];
+  const data = this.data['Monthly Revenue Trend']['data'];
 
-    this.keysMonthlyRevenue = data.map((item) => item[0].toString()); // X-axis labels
-    this.valuesMonthlyRevenue = data.map((item) => Number(item[1])); // Data points
+  this.keysMonthlyRevenue = data.map((item) => item[0].toString()); // X-axis labels
+  this.valuesMonthlyRevenue = data.map((item) => Number(item[1])); // Data points
 
-    this.chartOptionsMonthlyRevenueTrend = {
-      series: [
-        {
-          name: "Total Sales",
-          data: this.valuesMonthlyRevenue
-        }
-      ],
-      chart: {
-        height: 150,
-        type: "line",
-        zoom: {
-          enabled: false
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        curve: "straight"
-      },
-      grid: {
-        row: {
-          colors: ["#f3f3f3", "transparent"],
-          opacity: 0.5
-        }
-      },
-      yaxis: {
-        title: {
-          text: "Total Sales",
-          style: {
-            color: '#666',
-            fontSize: '14px',
-            fontFamily: 'Outfit',
-            fontWeight: 400
-          }
-        },
-        
-    },
-      xaxis: {
-        categories: this.keysMonthlyRevenue
+  this.chartOptionsMonthlyRevenueTrend = {
+    series: [
+      {
+        name: "Total Sales",
+        data: this.valuesMonthlyRevenue
       }
-    };
-  }
+    ],
+    chart: {
+      height: 150,
+      type: "line",
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: "straight"
+    },
+    grid: {
+      row: {
+        colors: ["#f3f3f3", "transparent"],
+        opacity: 0.5
+      }
+    },
+    yaxis: {
+      title: {
+        text: "Total Sales",
+        style: {
+          color: '#666',
+          fontSize: '14px',
+          fontFamily: 'Outfit',
+          fontWeight: 400
+        }
+      },
+     
+    },
+    xaxis: {
+      categories: this.keysMonthlyRevenue
+    }
+  };
+}
+
   typeArray: string[] = [];
   revenueArray: number[] = [];
   product1(){
