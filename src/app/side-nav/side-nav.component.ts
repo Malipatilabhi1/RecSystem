@@ -13,6 +13,8 @@ export class SideNavComponent implements OnInit {
    }
   dashboard: boolean = false;
   landing: boolean = false;
+  selection: boolean = false;
+  analysis: boolean = false;
   selectedOption:string='';
 selectOption(option:string){
 this.selectedOption =option;
@@ -28,8 +30,20 @@ this.selectedOption =option;
         if ( this.currentRoute === "/dashboard") {
           this.dashboard = true;
           this.landing = false;
+          this.selection=false;
+          this.analysis=false;
         }
-       
+        if ( this.currentRoute === "/selection") {
+          this.dashboard = false;
+          this.landing = false;
+          this.selection=true;
+          this.analysis=false;
+        } if ( this.currentRoute === "/analysis") {
+          this.dashboard = false;
+          this.landing = false;
+          this.selection=false;
+          this.analysis=true;
+        }
       }
     });
   }

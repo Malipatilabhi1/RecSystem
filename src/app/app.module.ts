@@ -28,6 +28,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { LandingScreenComponent } from './landing-screen/landing-screen.component';
+import { AnalysisComponent } from './analysis/analysis.component';
+import { SelectionComponent } from './selection/selection.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { LandingScreenComponent } from './landing-screen/landing-screen.componen
     HeaderComponent,
     SideNavComponent,
     DashboardComponent,
-    LandingScreenComponent
+    LandingScreenComponent,
+    AnalysisComponent,
+    SelectionComponent
   ],
   imports: [
      MatProgressBarModule,

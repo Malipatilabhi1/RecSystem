@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   ChartComponent,
   ApexNonAxisChartSeries,
@@ -125,7 +126,7 @@ export class DashboardComponent implements OnInit {
   public chartOptionsProduct2: Partial<ChartOptionsProduct2>;
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.salesQuantity()
@@ -717,6 +718,18 @@ export class DashboardComponent implements OnInit {
           }
         };
       
+    }
+
+    isLoading = false;
+    navigateToSelection() {
+     
+      this.isLoading = true; // Show the progress bar
+    
+      setTimeout(() => {
+        this.router.navigate(['./selection']).then(() => {
+          this.isLoading = false; // Hide the progress bar when navigation is complete
+        });
+      }, 3000); // Delay of 3 seconds
     }
   }
 
