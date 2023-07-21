@@ -163,7 +163,7 @@ export class DashboardComponent implements OnInit {
        "Unsteady Customers":11.4
     },
     "Revenue by Country":{
-       "United Kingdom":8.19,
+      //  "United Kingdom":8.19,
        "Netherlands":0.28,
        "EIRE":0.26,
        "Germany":0.22,
@@ -322,7 +322,7 @@ export class DashboardComponent implements OnInit {
     this.chartOptionsSales = {
       series: [
         {
-          name: "Average Spend",
+          name: "Sales by Countries",
           data: this.valuesCountry
         }
       ],
@@ -382,7 +382,7 @@ export class DashboardComponent implements OnInit {
       tooltip: {
         y: {
           formatter: function(val) {
-            return "$ " + val + " thousands";
+            return "$ " + val + " ";
           }
         }
       }
@@ -416,7 +416,7 @@ export class DashboardComponent implements OnInit {
           return '<span style="font-size: 13px; font-family: Outfit; font-style: bold;">' + val + ': ' +  percentage.toFixed(1) + '%';
         }
       },
-      colors:["#3AA0FF","#36CBCB","#FAD337"],
+      // colors:["#3AA0FF","#36CBCB","#FAD337"],
       labels: this.keysRFM,
       responsive: [
         {
@@ -443,7 +443,7 @@ export class DashboardComponent implements OnInit {
       this.chartOptionsRevenueByCountry = {
         series: [
           {
-            name: "Average Spend",
+            name: "Revenue by Country",
             data: this.valuesRevenue
           }
         ],
@@ -503,7 +503,7 @@ export class DashboardComponent implements OnInit {
         tooltip: {
           y: {
             formatter: function(val) {
-              return "$ " + val + " thousands";
+              return "$ " + val + " ";
             }
           }
         }
@@ -520,7 +520,7 @@ export class DashboardComponent implements OnInit {
   this.chartOptionsMonthlyRevenueTrend = {
     series: [
       {
-        name: "Total Sales",
+        name: "Monthly Revenue Trend",
         data: this.valuesMonthlyRevenue
       }
     ],
@@ -573,7 +573,7 @@ export class DashboardComponent implements OnInit {
         this.chartOptionsProduct1 = {
           series: [
             {
-              name: "Average Spend",
+              name: "Total Revenue of Type",
               data: this.revenueArray
             }
           ],
@@ -651,7 +651,7 @@ export class DashboardComponent implements OnInit {
           
           series: [
             {
-              name: "Average Spend",
+              name: "Sales by Quantity",
               data: this.valuesTopsales
             }
           ],
@@ -711,7 +711,7 @@ export class DashboardComponent implements OnInit {
           tooltip: {
             y: {
               formatter: function(val) {
-                return "$ " + val + " thousands";
+                return "$ " + val + " ";
               }
             }
           }
